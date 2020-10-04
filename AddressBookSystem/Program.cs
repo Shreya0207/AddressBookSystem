@@ -7,7 +7,6 @@ namespace AddressBookSystem
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the Address Book Program");
-            Console.WriteLine("Welcome to Address Book Program.");
             AddressBook addressBook = new AddressBook();
             Console.WriteLine("Enter First Name :");
             string firstName = Console.ReadLine();
@@ -26,6 +25,8 @@ namespace AddressBookSystem
             Console.WriteLine("Enter Phone Number :");
             long phoneNumber = Convert.ToInt64(Console.ReadLine());
             addressBook.AddContact(firstName, lastName, address, city, state, email, zip, phoneNumber);
+            addressBook.ViewContact();
+            addressBook.EditContact(firstName);
             addressBook.ViewContact();
         }
     }
