@@ -1,12 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace AddressBookSystem
 {
     class Program
     {
+        private static string bookName;
+
         static void Main(string[] args)
         {
-            Console.WriteLine("Welcome to the Address Book Program");
+            Console.WriteLine("Welcome to Address Book Program.");
             AddressBook addressBook = new AddressBook();
             int choice;
             do
@@ -53,11 +56,22 @@ namespace AddressBookSystem
                         addressBook.ViewContact();
                         break;
                     case 6:
+                        Console.WriteLine("Enter Name For New AddressBook");
+                        addressBook.AddAddressBook(Console.ReadLine());
+                        break;
+                    case 7:
+                        Console.WriteLine("Enter Name Of AddressBook From Below List");
+                        foreach (KeyValuePair<string, AddressBook> item in addressBook.GetAddressBook())
+                        {
+                            Console.WriteLine(item.Key);
+                        }
+                        bookName = Console.ReadLine();
+                        break;
+                    case 8:
                         Console.WriteLine("Thank You For Using Address Book System.");
                         break;
                 }
-            } while (choice != 6);
+            } while (choice != 8);
         }
     }
 }
-        
