@@ -167,6 +167,11 @@ namespace AddressBookSystem
                         handler.WriteToFile(addressBook.addressBookDictionary);
                         handler.ReadFromFile();
                         break;
+                    case 13:
+                        JsonOperation json = new JsonOperation();
+                        json.WriteToFile(addressBook.addressBookDictionary);
+                        json.ReadFromFile();
+                        break;
                     case 0:
                         Console.WriteLine("Thank You For Using Address Book System.");
                         break;
